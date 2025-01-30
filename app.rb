@@ -7,8 +7,8 @@ end
 
 get("/process_roll") do
   
-  @num_dice = params.fetch("dice_roll").to_i
-  @sides = params.fetch("die_sides").to_i
+  @num_dice = params.fetch("dice").to_i
+  @sides = params.fetch("sides").to_i
   @rolls = []
 
   @num_dice.times do
@@ -17,5 +17,5 @@ get("/process_roll") do
     @rolls.push(die)
   end
 
-  erb(:flexible)
+  erb(:results)
 end
